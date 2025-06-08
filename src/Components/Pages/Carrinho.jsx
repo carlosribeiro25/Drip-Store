@@ -1,45 +1,53 @@
 "use client"
-console.log("URL:", import.meta.env.VITE_SUPABASE_URL)
-console.log("KEY:", import.meta.env.VITE_SUPABASE_ANON_KEY)
 
 import { useState, useEffect, useCallback } from "react"
 import { createClient } from "@supabase/supabase-js"
-import styles from './Carrinho.module.css'
-import { generateSessionId } from '../../utils/cartUtils'
+import styles from "./Carrinho.module.css"
+import { generateSessionId } from "../../utils/cartUtils"
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-)
-
-
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY)
 
 export default function Carrinho({ isVisible, onClose }) {
   const [cartItems, setCartItems] = useState([])
   const [loading, setLoading] = useState(false)
   const [sessionId, setSessionId] = useState(null)
 
-  const fetchCartItems = useCallback(async (currentSessionId = sessionId) => {
-    if (!currentSessionId) return
+  const fetchCartItems = useCallback(
+    async (currentSessionId = sessionId) => {
+      if (!currentSessionId) return
 
-    setLoading(true)
-    try {
-      const { data, error } = await supabase
-        .from("cart_items")
-        .select(`
+      setLoading(true)
+      try {
+        // Debug: Vamos ver o que está sendo retornado
+        const { data, error } = await supabase
+          .from("cart_items")
+          .select(`
           *,
           product:products(*)
         `)
-        .eq("session_id", currentSessionId)
+          .eq("session_id", currentSessionId)
 
-      if (error) throw error
-      setCartItems(data || [])
-    } catch (error) {
-      console.error("Erro ao buscar itens do carrinho:", error)
-    } finally {
-      setLoading(false)
-    }
-  }, [sessionId])
+        if (error) {
+          console.error("Erro na query:", error)
+          throw error
+        }
+
+        // Debug: Log para ver os dados retornados
+        console.log("Dados do carrinho:", data)
+        console.log(
+          "Produtos encontrados:",
+          data?.map((item) => item.product),
+        )
+
+        setCartItems(data || [])
+      } catch (error) {
+        console.error("Erro ao buscar itens do carrinho:", error)
+      } finally {
+        setLoading(false)
+      }
+    },
+    [sessionId],
+  )
 
   useEffect(() => {
     const id = generateSessionId()
@@ -104,7 +112,27 @@ export default function Carrinho({ isVisible, onClose }) {
   }
 
   const handleCheckout = () => {
-    alert('Função de checkout será implementada em breve!')
+    alert("Função de checkout será implementada em breve!")
+  }
+
+  // Função para obter a URL da imagem com fallback
+  const getImageUrl = (item) => {
+    // Primeiro tenta a imagem do produto
+    if (item.product?.image_url) {
+      return item.product.image_url
+    }
+
+    // Se não tem imagem do produto, tenta outras possibilidades
+    if (item.product?.imagem) {
+      return item.product.imagem
+    }
+
+    if (item.product?.foto) {
+      return item.product.foto
+    }
+
+    // Fallback para placeholder
+    return "/placeholder.svg?height=60&width=60"
   }
 
   return (
@@ -134,20 +162,38 @@ export default function Carrinho({ isVisible, onClose }) {
               {cartItems.map((item) => (
                 <div key={item.id} className={styles["carrinho-item"]}>
                   <img
-                    src={item.product?.image_url || "/placeholder.svg?height=60&width=60"}
+                    src={getImageUrl(item) || "/placeholder.svg"}
                     alt={item.product?.name || "Produto"}
                     className={styles["carrinho-item-imagem"]}
+                    onError={(e) => {
+                      console.log("Erro ao carregar imagem:", e.target.src)
+                      e.target.src = "/placeholder.svg?height=60&width=60"
+                    }}
                   />
                   <div className={styles["carrinho-item-detalhes"]}>
-                    <p className={styles["carrinho-item-nome"]}>{item.product?.name || "Produto"}</p>
-                    <p className={styles["carrinho-item-preco"]}>{formatPrice(item.product?.price || 0)}</p>
+                    <p className={styles["carrinho-item-nome"]}>
+                      {item.product?.name || item.product?.nome || "Produto"}
+                    </p>
+                    <p className={styles["carrinho-item-preco"]}>
+                      {formatPrice(item.product?.price || item.product?.preco || 0)}
+                    </p>
+                    {/* Debug info - remova depois */}
+                    <small style={{ color: "#999", fontSize: "10px" }}>
+                      ID: {item.product_id} | Produto: {item.product ? "Encontrado" : "Não encontrado"}
+                    </small>
                   </div>
                   <div className={styles["carrinho-item-quantidade"]}>
-                    <button className={styles["quantidade-btn"]} onClick={() => updateQuantity(item.id, item.quantity - 1)}>
+                    <button
+                      className={styles["quantidade-btn"]}
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    >
                       -
                     </button>
                     <span className={styles["quantidade-numero"]}>{item.quantity}</span>
-                    <button className={styles["quantidade-btn"]} onClick={() => updateQuantity(item.id, item.quantity + 1)}>
+                    <button
+                      className={styles["quantidade-btn"]}
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    >
                       +
                     </button>
                   </div>
@@ -175,5 +221,3 @@ export default function Carrinho({ isVisible, onClose }) {
     </>
   )
 }
-
-
