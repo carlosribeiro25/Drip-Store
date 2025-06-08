@@ -21,8 +21,7 @@ export default function Footer() {
                             
                              </p>
                              <div className="rede-social flex flex-row gap-4"> 
-                                <BiLogoFacebook size={36}/>
-                                                                 
+                                <BiLogoFacebook size={36}/>                                                                 
                                         <InstagramLogo size={36} />   
                                         <TwitterLogo size={36}  weight="fill" />
                              </div>

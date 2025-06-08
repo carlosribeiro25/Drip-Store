@@ -48,12 +48,13 @@ export default function MeusPedidos2() {
       </div>
       <br />
       <hr />
+      <br />
       {pedidos.map((pedido, index) => (
         <div
           key={index}
           className="flex justify-between    p-4  bg-white"
         >
-            <img width={90} height={80} src="src/public/Tenis.png" alt="" /><br />
+            <img width={90} height={80} src="./shoes.png" alt="" /><br />
             <div className="w-2/3 text-start">
             {pedido.numero && (
               <p className="text-sm text-gray-700" >Pedido nº {pedido.numero}</p>

@@ -1,34 +1,27 @@
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import MeusPedidos2 from "./MeusPedidos2";
+import React, { useState } from "react";
+import Sidebar from "../Informations/Sidebar";
+import Pedidos from "../Informations/Pedidos";
+import InformacoesPessoais from "../Informations/InformacoesPessoais";
+import EnderecoEntrega from "../Informations/EnderecoEntrega";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
+export default function MeusPedidos() {
+  const [activeSection, setActiveSection] = useState("Meus Pedidos");
 
-export default function MeusPedidos(){
-    return (
-        <>
-        
-            <Header/>
-            <br />
-            <section className="mb-10 flex  h-screen gap-10">
-            <br /><br />
-            <div className="bg-white w-60 h-60  justify-around rounded-sm flex  ml-4 ">
-            <br />
-            <div className="w-50 h-50   justify-center"><br />
-                 <a  href="#" className="font-semibold">Meu perfil</a>
-                <hr /><br />
-                <a href="#" className="text-amber-600 font-semibold">Meus pedidos </a><hr /><br />
-                <a href="#"className="font-semibold">Minhas Informações</a><hr /><br />
-                <a href="#" className="font-semibold"  >Meus Pagamentos</a><br />
-            </div>                
-            </div ><br />
-
-            <MeusPedidos2/>
-        </section>
-        <br />
-        <br />
-        
-
-        <Footer/>
-        </>
-    )
+  return (
+    <>
+    <Header/><br /><br />
+    <div className="flex h-86 w-2xl justify-around gap-4 bg-gray-100 p-6">
+      <Sidebar active={activeSection} setActive={setActiveSection} />
+      <div className="flex-1 ml-6 bg-white rounded-2xl shadow p-6">
+        {activeSection === "Meus Pedidos" && <Pedidos />}
+        {activeSection === "Minhas Informações" && <InformacoesPessoais />}
+        {activeSection === "Endereço de Entrega" && <EnderecoEntrega />}
+        {activeSection === "Meu Perfil" && <p>Perfil simples (placeholder)</p>}
+      </div>
+    </div><br /><br />
+    <Footer/>
+    </>
+  );
 }
