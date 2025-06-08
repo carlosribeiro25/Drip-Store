@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
 import { Search } from "lucide-react";
+import { FiShoppingCart } from "react-icons/fi";
 
 
 export default function Header() {
@@ -37,7 +38,7 @@ export default function Header() {
           </button>
 
           <button onClick={() => setMostrarCarrinho(true)}>
-            <Icon icon="mdi-light:cart" color="#C92071" width="32" height="32" />
+            <FiShoppingCart className='w-8 h-8 text-pink-500 cursor-pointer' />
           </button>
         </div>
       </div>

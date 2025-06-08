@@ -6,26 +6,23 @@ export default function Section() {
       <div className="colecoes-destaque">
         <h2>Coleções em destaque</h2>
         <div className="botoes-colecoes">
-          <div className="item-colecao">
-            <button>
-              <img src="/tshirt-_1_.svg" alt="Camisetas" draggable="false" />
-            </button>
-            <h5>Camisetas</h5>
-          </div>
+          <button >
+            <img src="/icon-tshirt.svg" alt="Camisetas" draggable="false" />
+          </button> 
 
-          <div className="item-colecao">
+          <div className="item-colecao ">
             <button>
               <img src="/pants.svg" alt="Calças" draggable="false" />
             </button>
             <h5>Calças</h5>
           </div>
 
-         <div className="item-colecao">
-  <button>
-    <img src="/cap_icon.ico" alt="Bonés" draggable="false" />
-  </button>
-  <h5>Bonés</h5>
-</div>
+          <div className="item-colecao">
+            <button>
+              <img  src="/cap_icon.ico" alt="Bonés" draggable="false" />
+            </button>
+            <h5>Bonés</h5>
+          </div>
 
           <div className="item-colecao">
             <button>
@@ -42,7 +39,7 @@ export default function Section() {
           </div>
         </div>
       </div>
-       
+
     </>
   );
 }
