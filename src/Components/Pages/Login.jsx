@@ -15,7 +15,7 @@ export default function Login() {
       <br />
       <br />
         
-      <section  className=' flex  justify-around'> 
+      <section  className=' flex justify-evenly'> 
         <div className=" bg-white w-98 justify-items-center rounded-sm h-110 max-w-full mb-4  "><br />
           <form action=""  method="post">
             <div >
@@ -75,19 +75,14 @@ export default function Login() {
               <Icon icon="logos:facebook" width={30} height={25} className='cursor-pointer' />
             </div>
           </form>
-        </div>
-  
-        <img src="https://bruno-gsilva.github.io/Drip_Store/DripStore_login/resources/images/shoes01.png" 
-        width={350}
-        height={250}
+        </div>  
+        <img src="./login-shoes.png" 
+        width={450}
+        height={350}
         className='mb-8'
         alt="shoes login digital college" />
-
-          <img src="https://bruno-gsilva.github.io/Drip_Store/DripStore_login/resources/images/shoes02.png" 
-        width={350} 
-         height={250}     
-         alt="shoes login digital college" /> 
-       </section> 
+ 
+       </section> <br />
        <Footer/>
        </main>
     </>

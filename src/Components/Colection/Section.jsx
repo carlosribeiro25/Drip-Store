@@ -7,7 +7,7 @@ export default function Section() {
         <h2>Coleções em destaque</h2>
         <div className="botoes-colecoes">
           <button >
-            <img src="/icon-tshirt.svg" alt="Camisetas" draggable="false" />
+            <img src="/category-tshirt.svg" alt="Camisetas" draggable="false" />
           </button> 
 
           <div className="item-colecao ">
