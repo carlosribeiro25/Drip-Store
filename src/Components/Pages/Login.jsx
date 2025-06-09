@@ -16,9 +16,9 @@ export default function Login() {
       <br />
         
       <section  className=' flex  justify-around'> 
-        <div className=" bg-white w-98 justify-items-center h-110 max-w-full mb-4  "><br />
+        <div className=" bg-white w-98 justify-items-center rounded-sm h-110 max-w-full mb-4  "><br />
           <form action=""  method="post">
-            <div className="">
+            <div >
               <h1 className=' text-2xl font-bold mb-4'>Acesse sua conta</h1>
             </div>
             <br />
@@ -37,8 +37,7 @@ export default function Login() {
               <input
                 id="email"
                 type="email"
-                className='w-90 appearance-none block px-4 py-3 leading-tight text-gray-700 focus:bg-white rounded-sm bg-gray-300 h-10 pl-4 mt-1 '
-                
+                className='w-90 appearance-none block px-4 py-3 leading-tight text-gray-700 focus:bg-white rounded-sm bg-gray-300 h-10 pl-4 mt-1 '               
                 placeholder='Insira seu login ou email...' style={{ textIndent: '0.5rem' }}
                 required
               /> 
@@ -83,17 +82,13 @@ export default function Login() {
         height={250}
         className='mb-8'
         alt="shoes login digital college" />
+
           <img src="https://bruno-gsilva.github.io/Drip_Store/DripStore_login/resources/images/shoes02.png" 
         width={350} 
-         height={250} 
-        
+         height={250}     
          alt="shoes login digital college" /> 
-     
-
        </section> 
-
        <Footer/>
-
        </main>
     </>
   );

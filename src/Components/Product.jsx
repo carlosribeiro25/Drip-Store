@@ -5,7 +5,6 @@ import "./Product.css"
 import Carrinho from "../Components/Pages/Carrinho"
 import { generateSessionId } from "../utils/cartUtils"
 import { adicionarAoCarrinho } from "../utils/cartActions"
-
 export default function Product() {
   const [isCartVisible, setIsCartVisible] = useState(false)
   const [selectedSize, setSelectedSize] = useState("")
