@@ -14,10 +14,7 @@ export default function Footer() {
                          <LogoFooter/>  
                         
                     <p className=" max-w-2xs">
-                           Lorem, ipsum dolor sit amet consectetur ad
-                           ipisicing elit. Distinctio beatae cum
-                           , alias rerum quidem quae a. Asperiores
-                            laborum commodi tenetur animi,a,inaiiiii 
+                           Na Digital Story, você encontra produtos de qualidade, preços justos e atendimento de excelência. Buscamos sempre oferecer a melhor experiência de compra online. Entregamos para todo o Brasil com segurança e rapidez.
                             
                              </p>
                              <div className="rede-social flex flex-row gap-4"> 

@@ -14,7 +14,6 @@ export default function Product() {
   const [isAddingToCart, setIsAddingToCart] = useState(false) // Estado para loading
   const [cartUpdateTrigger, setCartUpdateTrigger] = useState(0) // Trigger para atualizar carrinho
 
-  // Array de imagens do produto
   const productImages = [
     "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom1.jpg?ts=1747397522&ims=1088x",
     "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom2.jpg?ts=1747397522&ims=1088x",
@@ -25,7 +24,7 @@ export default function Product() {
 
   const relatedProducts = [
     {
-      id: 8, // IDs diferentes para cada produto
+      id: 8, 
       name: "K-Swiss V8 - Masculino",
       brand: "K-Swiss",
       originalPrice: 200,
@@ -64,9 +63,8 @@ export default function Product() {
     setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length)
   }
 
-  // Função para adicionar produto principal ao carrinho
   const handleComprar = async () => {
-    if (isAddingToCart) return // Previne cliques múltiplos
+    if (isAddingToCart) return 
 
     setIsAddingToCart(true)
     const sessionId = generateSessionId()
@@ -77,10 +75,8 @@ export default function Product() {
       console.log("Adicionando produto principal ID:", productId)
       await adicionarAoCarrinho(sessionId, productId, quantity)
 
-      // Trigger para atualizar o carrinho
       setCartUpdateTrigger((prev) => prev + 1)
 
-      // Pequeno delay para garantir que o produto foi adicionado
       setTimeout(() => {
         setIsCartVisible(true)
       }, 300)
@@ -92,7 +88,6 @@ export default function Product() {
     }
   }
 
-  // Função para adicionar produtos relacionados ao carrinho
   const handleAdicionarRelacionado = async (product) => {
     if (isAddingToCart) return
 
@@ -104,13 +99,10 @@ export default function Product() {
       console.log("Adicionando produto relacionado ID:", product.id)
       await adicionarAoCarrinho(sessionId, product.id, quantity)
 
-      // Trigger para atualizar o carrinho
       setCartUpdateTrigger((prev) => prev + 1)
 
-      // Feedback visual
       alert(`${product.name} adicionado ao carrinho!`)
 
-      // Abre o carrinho após adicionar
       setTimeout(() => {
         setIsCartVisible(true)
       }, 300)
@@ -126,11 +118,10 @@ export default function Product() {
     <>
       <main className="produto-container">
         <div className="breadcrumb">
-          <span>Home / Produto / Tenis / Nike / Tênis Nike Revolution 6 Next Nature Masculino</span>
+          <span className="text-gray-800 text-xl">Home / Produto / Tenis / Nike / Tênis Nike Revolution 6 Next Nature Masculino</span>
         </div>
 
         <div className="produto-grid">
-          {/* GALERIA DE IMAGENS */}
           <div className="produto-galeria">
             <div className="produto-imagem-container">
               <button className="nav-arrow nav-arrow-left" onClick={prevImage}>
@@ -159,10 +150,9 @@ export default function Product() {
             </div>
           </div>
 
-          {/* INFORMAÇÕES DO PRODUTO */}
           <div className="produto-info">
             <h1 className="produto-titulo">Tênis Nike Revolution 6 Next Nature Masculino</h1>
-            <p className="produto-referencia">Casual | Nike | REF:38416711</p>
+            <p className="produto-referencia text-gray-800">Casual | Nike | REF:38416711</p>
 
             <div className="produto-avaliacoes">
               <span className="avaliacao-estrelas">★★★★☆</span>
@@ -172,14 +162,17 @@ export default function Product() {
 
             <div className="produto-precos">
               <p className="preco-antigo">R$ 219,00</p>
-              <p className="preco-atual">219,00</p>
+              <p className="preco-atual">200,00</p>
             </div>
 
             <div className="produto-descricao">
               <p className="descricao-titulo">Descrição do produto</p>
               <p className="descricao-texto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                O Tênis Nike Revolution 6 Next Nature Masculino é a escolha ideal para quem busca conforto, leveza e um design moderno.
+                 Produzido com materiais de alta qualidade, ele se adapta perfeitamente aos pés, garantindo 
+                 bem-estar durante todo o dia. Seu solado emborrachado oferece excelente aderência e segurança 
+                 em diferentes superfícies.
+               
               </p>
             </div>
 
@@ -220,7 +213,6 @@ export default function Product() {
           </div>
         </div>
 
-        {/* PRODUTOS RELACIONADOS */}
         <div className="produtos-relacionados">
           <div className="relacionados-header">
             <h2 className="relacionados-titulo">Produtos Relacionados</h2>
@@ -264,7 +256,7 @@ export default function Product() {
       <Carrinho
         isVisible={isCartVisible}
         onClose={() => setIsCartVisible(false)}
-        updateTrigger={cartUpdateTrigger} // Passa o trigger para forçar atualização
+        updateTrigger={cartUpdateTrigger} 
       />
     </>
   )

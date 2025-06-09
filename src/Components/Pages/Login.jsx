@@ -60,7 +60,7 @@ export default function Login() {
               <br />
               
             <div className="mb-4 text-sm">
-              <Link to="/recuperar-senha" className=" text-gray-600 underline">
+              <Link to="#" className=" text-gray-600 underline">
                 Esqueci minha senha
               </Link>
             </div>
