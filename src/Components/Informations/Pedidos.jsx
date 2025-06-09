@@ -14,7 +14,7 @@ export default function Pedidos() {
              <h2 className="text-xl font-semibold mb-4">Meus Pedidos</h2>
            <h2 className="text-xl font-semibold mb-4 ">Status </h2>
 
-        </div>
+        </div><br />
      
       {pedidos.map((pedido) => (
         <div key={pedido.id} className="flex border-b gap-2  py-4 items-center">
@@ -22,7 +22,7 @@ export default function Pedidos() {
             <img
               src="./shoes.png"
               alt="Produto"
-              className="w-16 h-16 bg-gray-400 p-4"
+              className="w-18 h-16 bg-gray-400 p-4"
             />
             <div>
               <p className="text-sm text-gray-700">Pedido n° {pedido.id}</p>

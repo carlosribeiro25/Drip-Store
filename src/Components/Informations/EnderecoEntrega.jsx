@@ -2,9 +2,9 @@ import React from "react";
 
 export default function EnderecoEntrega() {
   return (
-    <div>
+    <div className="justify-baseline">
       <h2 className="text-xl font-semibold mb-4">Endereço de Entrega</h2>
-      <div className="space-y-2 text-gray-700">
+      <div className="space-y-2 ml-2 text-gray-700">
         <p><strong>Endereço:</strong> Rua das Flores, 123</p>
         <p><strong>Bairro:</strong> Centro</p>
         <p><strong>Cidade:</strong> São Paulo</p>
