@@ -21,7 +21,7 @@ export default function MeusPedidos() {
         {activeSection === "Meu Perfil" && <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
            Repudiandae vitae voluptatibus tenetur modi error a, eos voluptate consequuntur officiis autem 
            totam, quia vero quod non sunt natus veniam dolorum beatae.</p>}
-        {activeSection === "Meus Pagamentos" && <MeusPagamentos />}
+        
       </div>
     </div><br /><br />
     <Footer/>

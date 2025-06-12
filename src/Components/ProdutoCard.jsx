@@ -3,13 +3,13 @@
 export default function ProdutoCard() {
     return (
         <>
-            <div className="bg-white rounded-2x p-1.5  cols-1 gap-4  ">
+            <div className="bg-white rounded-2xl p-1.5  cols-1 gap-15  ">
 
-                <img className="cursor-pointer rounded-sm" src="https://drip-store.netlify.app/assets/images/trending-products/product-image.png"
+                <img className="cursor-pointer rounded-sm" src="/shoes3.png"
 
                     alt="k-wiis"
                     width={292}
-                    height={321}
+                    height={310}
                 />
                 <div className="bg-gray-120">
                     <p className="text-lime-700 cursor-pointer text-ms font-bold "> Tênis </p>

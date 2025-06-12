@@ -42,8 +42,6 @@ export default function Login() {
                 required
               /> 
               </div><br />
-
-
             <div className='mb-4'>
               <label className='label-text  font-bold text-black' htmlFor="senha">
                 Senha*
@@ -54,7 +52,7 @@ export default function Login() {
                 className='w-90 appearance-none block px-4 py-3 leading-tight text-gray-700 focus:bg-white rounded-sm bg-gray-300 h-10 pl-4 mt-1 '
                 placeholder='Insira sua senha...' style={{ textIndent: '0.5rem' }}
                 required
-              />
+              /> 
               </div>
               <br />
               

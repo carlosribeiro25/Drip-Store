@@ -1,4 +1,4 @@
-import React from "react";
+
 import EndereçoEntrega from '../Informations/EnderecoEntrega';
 export default function InformacoesPessoais() {
   return (

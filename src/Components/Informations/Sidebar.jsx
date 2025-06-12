@@ -1,17 +1,16 @@
-import React from "react";
-
 const items = [
   "Meu Perfil",
   "Meus Pedidos",
   "Minhas Informações",
-  "Meus pagamentos",
+  
+   
 ];
 
 export default function Sidebar({ active, setActive }) {
   return (
     
-    <div className="w-60 h-60 flex bg-white rounded-2xl shadow p-4">
-        <div className="text-left justify-center w-50 p-6">
+    <div className="w-60 h-60 flex ml-8 bg-white rounded-2xl shadow p-4">
+        <div className="text-start py-4 justify-center w-50 p-6">
              {items.map((item) => (
         <div
           key={item}

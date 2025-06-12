@@ -2,12 +2,16 @@ import "./Section4.css";
 export default function Section4() {
     return (
         <>
-           <div className="flex items-start gap-8 mt-8">           
+        <section className="flex gap-6 ">       
+           <div className=" items-start  mt-8">           
   <img
-    src="https://drip-store.netlify.app/assets/images/special-offer/Air_Jordan.png"
+   width={400}
+   height={400}
+    src="/shoes4.png"
     alt="Tênis Jordan"   
   />
-  <div className="w-120">    
+  </div> 
+  <div className="w-200">    
     <p className="text-xl text-pink-500  font-semibold">Oferta especial</p><br />
     <h1  className="text-5xl font-bold">Air Jordan edição de colecionador</h1><br />
     <p className="text-xl">
@@ -18,7 +22,8 @@ export default function Section4() {
     </p><br />
     <button className="font-semibold rounded bg-pink-500 w-30 h-8 text-sm text-white "> Ver Oferta</button>   
   </div>
-</div> 
+  </section>
+
    
         </>
     );
