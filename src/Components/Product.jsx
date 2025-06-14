@@ -40,7 +40,7 @@ export default function Product() {
       salePrice: 180,
       discount: "40% OFF",
       image:
-        "https://theillest.pl/wp-content/uploads/2019/06/Stranger-Things-x-Nike-Blazer-Mid-Hawkins-High-School-CJ6101-100-2.jpg",
+        "/shoe-3.png",
     },
     {
       id: 10,
@@ -50,7 +50,7 @@ export default function Product() {
       salePrice: 150,
       discount: "40% OFF",
       image:
-        "https://theillest.pl/wp-content/uploads/2019/06/Stranger-Things-x-Nike-Blazer-Mid-Hawkins-High-School-CJ6101-100-2.jpg",
+        "/shoe-2.png",
     },
   ]
 
