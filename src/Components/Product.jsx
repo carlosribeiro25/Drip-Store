@@ -41,7 +41,7 @@ export default function Product() {
       discount: "40% OFF",
       image:
 
-        "/shoes3.png"
+        "/shoe-1.png"
 
     },
     {
