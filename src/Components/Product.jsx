@@ -40,7 +40,9 @@ export default function Product() {
       salePrice: 180,
       discount: "40% OFF",
       image:
-        "/shoe-3.png",
+
+        "/shoes3.png"
+
     },
     {
       id: 10,
