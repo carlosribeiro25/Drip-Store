@@ -14,11 +14,11 @@ export default function Product() {
   const [cartUpdateTrigger, setCartUpdateTrigger] = useState(0) // Trigger para atualizar carrinho
 
   const productImages = [
-    "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom1.jpg?ts=1747397522&ims=1088x",
-    "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom2.jpg?ts=1747397522&ims=1088x",
-    "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom3.jpg?ts=1747397522&ims=1088x",
-    "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom5.jpg?ts=1747397522&ims=1088x",
-    "https://static.netshoes.com.br/produtos/tenis-nike-sportswear-court-vision-low-next-nature-feminino/14/2IC-5476-014/2IC-5476-014_zoom6.jpg?ts=1747397522&ims=1088x",
+    "/shoes3.png",
+    "/shoes3.png",
+    "/shoes3.png",
+    "/shoes3.png",
+    "/shoes3.png",
   ]
 
   const relatedProducts = [
@@ -30,7 +30,7 @@ export default function Product() {
       salePrice: 100,
       discount: "50% OFF",
       image:
-        "https://theillest.pl/wp-content/uploads/2019/06/Stranger-Things-x-Nike-Blazer-Mid-Hawkins-High-School-CJ6101-100-2.jpg",
+        "/shoe-4.png",
     },
     {
       id: 9,
